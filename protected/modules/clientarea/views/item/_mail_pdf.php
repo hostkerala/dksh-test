@@ -28,32 +28,30 @@ if(!empty($items))
                 </tr>
                 </table>    
                 <br />
-                <?php if(!empty($data->client)):?>                
+                <?php if($data->client):?> 
+                 <?php $client = $data->client;?> 
                 <table cellspacing="0" style="width: 100%;">    
                     <tr>
-                        <?php $i = 0; foreach($data->client as $client): ?>                        
-                            <td>
-                                <table cellspacing="0" style="width: 100%;">
-                                    <tr>
-                                        <td style="width: 30%; font-size: 10pt;">
-                                            <br>
-                                            <b><?php echo $client->client_name;  ?></b><br>
-                                               <?php echo $client->client_street;  ?><br>                                            
-                                               <?php echo $client->client_city;  ?><br>
-                                               <?php echo $client->client_post_code;  ?><br>
-                                            <br>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
+                        <td>
+                            <table cellspacing="0" style="width: 100%;">
+                                <tr>
+                                    <td style="width: 30%; font-size: 10pt;">
+                                        <br>
+                                        <b><?php echo $client->client_name;  ?></b><br>
+                                           <?php echo $client->client_street;  ?><br>                                            
+                                           <?php echo $client->client_city;  ?><br>
+                                           <?php echo $client->client_postcode;  ?><br>
+                                        <br>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>       
                         <?php  $i = $i + 1; 
                                if($i>3)
                                {
                                    $i =0;
                                    echo "</tr><tr>";
-                               }
-                        
-                        endforeach; ?>
+                               }?>
                     </tr>
                 </table>
                 <?php

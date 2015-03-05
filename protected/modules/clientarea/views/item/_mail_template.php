@@ -38,4 +38,4 @@
     <div>
             Regards</div>
     <div>
-            Zara.</div>
+            <?php echo ucfirst($params['signature']); ?>.</div>

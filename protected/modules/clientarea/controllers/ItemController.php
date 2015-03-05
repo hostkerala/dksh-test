@@ -510,7 +510,8 @@ class ItemController extends ClientareaController {
         
         $params =   array(
                         'date' => date('d M Y'),
-                        'amount'=> Item::model()->findSumSelected($model->selected_items)
+                        'amount'=> Item::model()->findSumSelected($model->selected_items),
+                        'signature'=>$user->user_name
                     );
 
         $model->body  = $this->renderPartial('_mail_template',array('params'=>$params),true);
@@ -519,15 +520,15 @@ class ItemController extends ClientareaController {
         {
             $model->attributes = $_POST['SendMailForm'];
             
-            $tmpName = $_FILES['SendMailForm']['tmp_name']['attach_files'];
-            $fileName = $_FILES['SendMailForm']['name']['attach_files'];
+            $tmpName = $_FILES['attach_files']['tmp_name'];
+            $fileName = $_FILES['attach_files']['name'];
             
             if($model->validate())
             {                 
                 if(is_string($model->selected_items))
                 {
                     $model->selected_items = explode (", ", $model->selected_items);
-                }                
+                }                  
                 
                 $message   = new YiiMailMessage;
                 $params =   array(
@@ -576,8 +577,12 @@ class ItemController extends ClientareaController {
                 }
                 
                 $item = new Item('search');
-                $item->unsetAttributes();
-                $item->id = $model->selected_items;                
+                $item->unsetAttributes();                
+                if(is_string($model->selected_items))
+                {
+                    $model->selected_items = explode (", ", $model->selected_items);
+                }
+                $item->id = $model->selected_items; 
                 $dataProvider = $item->search();
                 $dataProvider->pagination = false;
                 echo $this->renderPartial('_mail_preview', array('dataProvider' => $dataProvider));
@@ -681,7 +686,7 @@ class ItemController extends ClientareaController {
     public function actionPdf()
     {
         //This function is only for PDF testing purpose.        
-        $selectedItems = array(89,80,121);         
+        $selectedItems = array(40,85,90,96,102,89,80,121);         
         $html2pdf = Yii::app()->ePdf->HTML2PDF(); 
         $mailContent = $this->renderPartial('_mail_pdf',array('selectedItems'=>$selectedItems),true); 
         $html2pdf->WriteHTML($mailContent);       

@@ -90,22 +90,16 @@
                     <?php echo $form->error($model,'attach_pdf'); ?>                
             </div>
         
-            <div class="form-group buttons" style="text-align:left">
+            <div class="form-group">
                 <div class="col-md-6">
                     <?php echo $form->labelEx($model,'attach_files', array('class' => 'control-label','style'=>'text-align:left')); ?>
                 </div>
-                 <div class="col-md-6">
-                    <?php echo $form->fileField($model,'attach_files[]',
-                                                        array(
-                                                            'data-show-remove'=>"true",
-                                                            'data-show-upload'=>"false",
-                                                            'multiple'=>true,
-                                                            'type'=>"file",
-                                                            'class'=>"file",
-                                                            'data-show-preview'=>"true",  
-                                                        )); ?>
+                 <div class="col-md-4 buttons" style="padding-top:0px;text-align:left">
+                     <span class="btn btn-primary btn-file">
+                        Attach Files <input name ="attach_files[]" type="file" multiple>                        
+                    </span>
+                    <span id="file-feedback">Nothing Attached</span>
                  </div>
-
                 <?php echo $form->error($model,'attach_files'); ?>
             </div>
         
@@ -123,33 +117,48 @@
         </div>
     </div>
 <style>
-.checkboxArea .checkboxAreaChecked
+
+.checkboxArea
+{
+     margin-top:20px;
+}
+.checkboxAreaChecked
 {    
     margin-top:20px;
 }
 
-div.form-control.file-caption.kv-fileinput-caption
-{
-width:auto;  
-padding: 6px 12px;
-font-size: 14px;
-line-height: 1.42857143;
-color: #555;
-background-color: transparent;
-background-image: none;
-border: none;
+.btn-file {
+    position: relative;
+    overflow: hidden;
 }
-
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
 </style>
 
 <script>
-    $("#SendMailForm_attach_files").fileinput({
-	browseClass: "btn btn-primary",        
-	showUpload: false, 
-        maxFilesNum: 10,        
-        browseLabel: "Attach",
-        allowedFileExtensions: ["pdf"],
-        indicatorNewTitle: 'Not uploaded yet',
-        initialCaption : "Nothing Attached"
+    $(document).on('change', '.btn-file :file', function() {
+    var input = $(this),
+        numFiles = input.get(0).files ? input.get(0).files.length : 1,
+        label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+        input.trigger('fileselect', [numFiles, label]);
+    });
+    $(document).ready( function() {
+    $('.btn-file :file').on('fileselect', function(event, numFiles, label) {
+        $("#file-feedback").html(numFiles+" Files attached");
+    });
 });
-</script>
+    
+</script>    
