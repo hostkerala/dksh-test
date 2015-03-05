@@ -1,0 +1,178 @@
+.outtaHere {
+	position:absolute;
+	left:-3000px;
+}
+/*radio*/
+.radioArea, .radioAreaChecked{
+	float:left;
+	width:22px;
+	height:21px;
+	margin:0 5px 0 0;
+	background:url(../images/radio.png) no-repeat;
+}
+.radioAreaChecked{background-position:0 -39px;}
+/*checkbox*/
+.checkboxArea, .checkboxAreaChecked{
+	width:22px;
+	height:22px;
+	border:1px solid #c1c1c1;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	cursor: pointer;
+	background: #fff;
+}
+.checkboxAreaChecked{
+
+	background: url(../images/bg-checkbox-arrow.gif) no-repeat 50% 50% #fff;
+
+}
+/*select*/
+.selectArea {
+	float:left;
+	width:198px;
+	height:56px;
+	border:1px #ccc solid;
+	position:relative;
+	color:#9d9d9d;
+	font-size:24px;
+	border-radius: 8px;
+	-moz-border-radius: 68px;
+	-webkit-border-radius: 8px;
+	background:#FCFCFC;
+}
+.selectArea a.selectButton{
+	position:absolute;
+	top:0;
+	right:0;
+	width:53px;
+	height:56px;
+	cursor:pointer;
+	border-left:1px #eee solid;
+	background:url(../images/select-open.png) no-repeat 0 0;
+}
+.selectArea .center{
+	display:block;
+	height:56px;
+	position:static;
+	text-align:left;
+	padding:0 0 0 10px;
+	margin:0 26px 0 0;
+	line-height:56px;
+}
+.optionsDivInvisible{display:none;}
+.optionsDivVisible ul{
+	padding:5px 0;
+	overflow:hidden;
+	margin: 0;
+}
+.optionsDivVisible ul li{display:block;}
+.optionsDivVisible ul .hidden{display:none;}
+.optionsDivVisible a, .ui-autocomplete.ui-menu .ui-menu-item{
+	display:block;
+	padding:0 10px;
+	line-height:25px;
+	color:#333;
+	font:14px/25px "MyriadProRegular",sans-serif
+}
+.optionsDivVisible a:hover{
+	background:#eee;
+	text-decoration:none;
+}
+.optionsDivVisible, ul.ui-autocomplete{
+	width:198px;
+	background:#fff;
+	border:1px solid #ccc;
+	overflow:auto;
+	margin:2px 0 0 0;
+	z-index:5;
+	max-height: 150px;
+}
+.ui-autocomplete.ui-menu .ui-menu-item:hover, .ui-autocomplete.ui-menu .ui-menu-item.ui-state-focus{
+	background:#eee;
+	text-decoration:none;
+	border:0;
+	padding: 0 10px;
+	font-weight: normal;
+	margin: 0;
+}
+.optionsDivVisible .select-search{
+	height:20px;
+	overflow:hidden;
+	margin:5px 5px 0;
+	background:url(../images/components/select-search.gif) no-repeat 170px 50%;	
+	padding:0 20px 0 5px;
+	border:1px #ccc solid;
+}
+.optionsDivVisible .select-search input{
+	border:none;
+	background:none;
+	display:block;
+	padding:0;
+	margin:0;
+	line-height:20px;
+	height:20px;
+}
+/*custom scroll*/
+.jspContainer{
+	overflow:hidden;
+	position:relative;
+}
+.jspPane{position:absolute;}
+.jspVerticalBar{
+	position:absolute;
+	top:0;
+	right:0;
+	width:9px;
+	border-left:1px #ccc solid;
+	height:100%;
+	background:#fff;
+}
+.jspHorizontalBar{
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+	height:9px;
+	border-top:1px #ccc solid;
+	background:#fff;
+}
+.jspCap{display:none;}
+.jspHorizontalBar .jspCap{float:left;}
+.jspTrack{
+	background:#eee;
+	position:relative;
+}
+.jspDrag{
+	background:#ccc;
+	position: relative;
+	top:0;
+	left:0;
+	cursor:pointer;
+}
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag{
+	float:left;
+	height:100%;
+}
+.jspArrow{
+	background:#ccc;
+	text-indent:-9999px;
+	display:block;
+	cursor:pointer;
+}
+.jspArrow.jspDisabled{
+	cursor:default;
+	background:#80808d;
+}
+.jspVerticalBar .jspArrow{height:9px;}
+.jspHorizontalBar .jspArrow{
+	width:9px;
+	float:left;
+	height:100%;
+}
+.jspCorner{
+	background:#ccc;
+	float:left;
+	height:100%;
+}

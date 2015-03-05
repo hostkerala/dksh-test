@@ -1,0 +1,14 @@
+# Created by .gitignore support plugin (hsz.mobi)
+### Yii template
+assets/*
+!assets/.gitignore
+protected/runtime/*
+!protected/runtime/.gitignore
+protected/data/*.db
+themes/classic/views/
+uploads/mail_pdf/*
+protected/config/db-local.php
+nbproject/
+readme.md
+bkp/
+*~

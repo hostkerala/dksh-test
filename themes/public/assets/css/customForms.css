@@ -1,0 +1,218 @@
+.outtaHere {
+	position:absolute;
+	left:-3000px;
+}
+/*radio*/
+.radioArea, .radioAreaChecked{
+	float:left;
+	width:22px;
+	height:21px;
+	margin:0 5px 0 0;
+	background:url(../images/radio.gif) no-repeat;
+}
+.radioAreaChecked{background-position:0 -39px;}
+/*checkbox*/
+.checkboxArea, .checkboxAreaChecked{
+	width:24px;
+	height:24px;
+	margin:-7px 5px 0 0;
+	cursor: pointer;
+	border:1px solid #CACACA;
+	border-right: 3px solid #D2D2D2;
+	display: inline-block;
+	vertical-align: middle;
+	background-color: #EFF1F4;
+	-webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset;
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset;
+}
+
+.checkboxAreaChecked{background-color: #373847;}
+/*select*/
+.selectArea {
+	width:100%;
+	height:37px;
+	border:1px #A2A2A2 solid;
+	position:relative;
+	background-color: #FFFFFF;
+	-webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.15) inset;
+	-moz-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.15) inset;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.15) inset;
+}
+.selectArea a.selectButton{
+	position:absolute;
+	top:0;
+	right:0;
+	width:25px;
+	height:37px;
+	cursor:pointer;
+	background:url(../images/select-arrow.gif) no-repeat 50% 50%;
+}
+.selectArea .center{
+	display:block;
+	height:37px;
+	text-align:left;
+	padding:0 0 0 10px;
+	margin:0 26px 0 0;
+	line-height:37px;
+	color:#999;
+}
+.optionsDivInvisible{display:none;}
+.optionsDivVisible ul{
+	padding:5px 0;
+	overflow:hidden;
+	margin:0;
+}
+.optionsDivVisible ul li{display:block;}
+.optionsDivVisible ul .hidden{display:none;}
+.optionsDivVisible a{
+	display:block;
+	padding:0 10px;
+	line-height:25px;
+	color:#333;
+}
+.optionsDivVisible a:hover{
+	background:#eee;
+	text-decoration:none;
+}
+.optionsDivVisible{
+	background:#fff;
+	border:1px solid #ccc;
+	overflow:auto;
+	margin:2px 0 0 0;
+	z-index:5;
+}
+.optionsDivVisible .select-search{
+	height:20px;
+	overflow:hidden;
+	margin:5px 5px 0;
+	background:url(../images/components/select-search.gif) no-repeat 170px 50%;	
+	padding:0 20px 0 5px;
+	border:1px #ccc solid;
+}
+.optionsDivVisible .select-search input{
+	border:none;
+	background:none;
+	display:block;
+	padding:0;
+	margin:0;
+	line-height:20px;
+	height:20px;
+}
+
+/*NEW SELECT*/
+
+.form-holder .selectArea{
+	width: 500px !important;
+	border:none;
+	height:40px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.form-holder .selectArea .center{
+	height: 40px;
+	padding:0 50px 0 20px;
+	margin: 0;
+	font-size: 14px;
+	color:#a9a9a9;
+	line-height: 40px;
+}
+
+.form-holder .selectArea a.selectButton{
+	width: 100%;
+	height: 40px;
+	background: url(../images/select-arrow.png) no-repeat 95% 50%;
+}
+
+.drop-complete-select{
+	width: 500px !important;
+	border:none;
+	max-height: 185px;
+	margin: 1px 0 0;
+}
+
+.drop-complete-select ul{
+	padding: 0;
+}
+
+.drop-complete-select ul a{
+	color: #666;
+    display: block;
+    padding: 11px 18px 9px;
+    text-decoration: none;
+    line-height: 17px;
+}
+
+.drop-complete-select a:hover{
+	background-color: #32CCFE;
+	color:#FFF;
+}
+
+/*custom scroll*/
+.jspContainer{
+	overflow:hidden;
+	position:relative;
+}
+.jspPane{position:absolute;}
+.jspVerticalBar{
+	position:absolute;
+	top:0;
+	right:0;
+	width:9px;
+	border-left:1px #ccc solid;
+	height:100%;
+	background:#fff;
+}
+.jspHorizontalBar{
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+	height:9px;
+	border-top:1px #ccc solid;
+	background:#fff;
+}
+.jspCap{display:none;}
+.jspHorizontalBar .jspCap{float:left;}
+.jspTrack{
+	background:#eee;
+	position:relative;
+}
+.jspDrag{
+	background:#ccc;
+	position: relative;
+	top:0;
+	left:0;
+	cursor:pointer;
+}
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag{
+	float:left;
+	height:100%;
+}
+.jspArrow{
+	background:#ccc;
+	text-indent:-9999px;
+	display:block;
+	cursor:pointer;
+}
+.jspArrow.jspDisabled{
+	cursor:default;
+	background:#80808d;
+}
+.jspVerticalBar .jspArrow{height:9px;}
+.jspHorizontalBar .jspArrow{
+	width:9px;
+	float:left;
+	height:100%;
+}
+.jspCorner{
+	background:#ccc;
+	float:left;
+	height:100%;
+}

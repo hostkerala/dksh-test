@@ -1,0 +1,24 @@
+{
+  "name":"Test Assignment",
+  "description":"Prove Developers Professional skills",
+  "keywords":[
+    "yii",
+    "application",
+    "web"
+  ],
+  "type":"yii-application",
+  "license":"GPL",
+  "minimum-stability":"dev",
+  "config":{
+    "vendor-dir":"protected/vendor"
+  },
+  "authors":[
+    {
+      "name":"Yii Developer",
+      "email":"youremail@domain.com"
+    }
+  ],
+  "require":{
+    "yiisoft/yii":"1.1.15"
+  }
+}

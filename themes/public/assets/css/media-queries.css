@@ -1,0 +1,197 @@
+@media screen and (max-width: 1280px) {
+	
+}
+
+@media screen and (max-width: 1024px) {
+	.grid{ width:48%; margin-bottom:4%;}
+	.grid:nth-child(4){ float:left!important;}
+	.grid-lg {width:46%; margin-bottom:3%;}
+	.grid-lg:nth-child(3){ float:left!important;}
+	
+	.content{ width:97%;}
+	.section{ width:95%; height:auto; margin-top:1%;}
+	
+	.banner{ width:90%;}
+}
+
+@media screen and (max-width: 980px) {
+	.grid{ width:48%; margin-bottom:4%;}
+	.grid:nth-child(4){ float:left!important;}
+	.grid-lg {width:46%; margin-bottom:3%;}
+	.grid-lg:nth-child(3){ float:left!important;}
+	
+	.content{ width:97%;}
+	.section{ width:95%; height:auto; margin-top:1%;}
+	
+	.banner{ width:90%;}
+	
+}
+
+@media screen and (max-width: 800px) {
+	
+	.grid{ width:48%; margin-bottom:4%;}
+	.grid:nth-child(4){ float:left!important;}
+	.grid-lg {width:46%; margin-bottom:3%;}
+	.grid-lg:nth-child(3){ float:left!important;}
+	
+	.content{ width:97%;}
+	.section{ width:95%; height:auto; margin-top:1%;}
+	
+	.banner{ width:90%;}
+}
+	
+
+@media screen and (max-width: 768px) {
+	
+	.grid{ width:48%; margin-bottom:4%;}
+	.grid:nth-child(4){ float:left!important;}
+	.grid-lg {width:46%; margin-bottom:3%;}
+	.grid-lg:nth-child(3){ float:left!important;}
+	
+	.content{ width:97%;}
+	.section{ width:95%; height:auto; margin-top:1%;}
+	
+	.banner{ width:90%;}
+}
+
+@media screen and (max-width: 640px) {
+	
+	.header{ width:95%;}
+	.logo{ float:none; margin:0 auto; width:100%; text-align:center; clear:both; margin-bottom:5%;}
+			
+	.nav{ width:100%; float:none; text-align:center; margin-bottom:8%;}
+	.nav a:link, .nav a:visited{padding:5px 15px;}
+	.user{ width:100%;float:none; text-align:center;}
+	.container{ width:100%;}
+	.content{ width:97%; margin-left:3%;}
+	.banner{ width:100%; margin-top:5%;}
+	.grid{ width:48%; margin-bottom:4%;}
+	.grid:nth-child(4){ float:left!important;}
+		
+	.grid-lg {width:96%; margin-bottom:4%;}
+	.grid-lg:nth-child(3){ float:left!important;}
+	
+	.section{ width:95%; height:auto; margin-top:1%;}
+	.section h1 { text-align:center;}
+	.section h4 { text-align:center; margin:5% 0!important;}
+	.col ul li{margin:0 0 1% 7%!important;}
+	
+	.col-2{ width:98%;}
+	.dark{width:88%;}
+	.offer{ width:95%;}
+	.offer > .button_2{font-size:16px;}
+	
+	.footer{ padding-bottom:4%!important;}
+	.footCol{ width:98%; float:left;}
+	.footCol > .textbox{ width:54%;}
+	.footCol > span > .button_2{ padding:5px 8px!important;}
+	.footCol:nth-child(2n){ float:left!important;}
+	.footCol > .col-2{ width:98%!important; float:left!important;}
+}
+
+@media screen and (max-width: 480px) {
+	
+	.header{ width:95%;}
+	.logo{ float:none; margin:0 auto; width:100%; text-align:center; clear:both; margin-bottom:5%;}
+			
+	.nav{ width:100%; float:none; text-align:center; margin-bottom:8%;}
+	.nav a:link, .nav a:visited{padding:0 9px;}
+	.user{ width:100%;float:none; text-align:center;}
+	.container{ width:100%;}
+	.content{ width:97%; margin-left:3%;}
+	.banner{ width:100%; margin-top:5%;}
+	.grid{ width:96%; margin-bottom:4%;}
+	.grid:nth-child(4){ float:left!important;}
+	
+	.grid-lg {width:96%; margin-bottom:4%;}
+	.grid-lg:nth-child(3){ float:left!important;}
+	
+	.section{ width:95%; height:auto; margin-top:1%;}
+	.section h1 { text-align:center;}
+	.section h4 { text-align:center; margin:5% 0!important;}
+	.col ul li{margin:0 0 1% 7%!important;}
+	
+	.col-2{ width:98%;}
+	.dark{width:88%;}
+	.offer{ width:95%;}
+	.offer > .button_2{font-size:16px;}
+	
+	.footer{ padding-bottom:4%!important;}
+	.footCol{ width:98%; float:left;}
+	.footCol > .textbox{ width:54%;}
+	.footCol > span > .button_2{ padding:5px 8px!important;}
+	.footCol:nth-child(2n){ float:left!important;}
+	.footCol > .col-2{ width:98%!important; float:left!important;}
+}
+
+
+@media screen and (max-width: 360px) {
+	
+	.header{ width:95%;}
+	.logo{ float:none; margin:0 auto; width:100%; text-align:center; clear:both; margin-bottom:5%;}
+			
+	.nav{ width:100%; float:none; text-align:center; margin-bottom:8%;}
+	.nav a:link, .nav a:visited{padding:0 9px;}
+	.user{ width:100%;float:none; text-align:center;}
+	.container{ width:100%;}
+	.content{ width:97%; margin-left:3%;}
+	.banner{ width:100%; margin-top:5%;}
+	.grid{ width:96%; margin-bottom:4%;}
+	.grid:nth-child(4){ float:left!important;}
+	
+	.grid-lg {width:96%; margin-bottom:4%;}
+	.grid-lg:nth-child(3){ float:left!important;}
+	
+	.section{ width:95%; height:auto; margin-top:1%;}
+	.section h1 { text-align:center;}
+	.section h4 { text-align:center; margin:5% 0!important;}
+	.col ul li{margin:0 0 1% 7%!important;}
+	
+	.col-2{ width:98%;}
+	.dark{width:88%;}
+	.offer{ width:95%;}
+	.offer > .button_2{font-size:16px;}
+	
+	.footer{ padding-bottom:4%!important;}
+	.footCol{ width:98%; float:left;}
+	.footCol > .textbox{ width:54%;}
+	.footCol > span > .button_2{ padding:5px 8px!important;}
+	.footCol:nth-child(2n){ float:left!important;}
+	.footCol > .col-2{ width:98%!important; float:left!important;}
+	
+}
+@media screen and (max-width: 320px) {
+
+	.header{ width:95%;}
+	.logo{ float:none; margin:0 auto; width:100%; text-align:center; clear:both; margin-bottom:5%;}
+			
+	.nav{ width:100%; float:none; text-align:center; margin-bottom:8%;}
+	.nav a:link, .nav a:visited{padding:0 9px;}
+	.user{ width:100%;float:none; text-align:center;}
+	.container{ width:100%;}
+	.content{ width:97%; margin-left:3%;}
+	.banner{ width:100%; margin-top:5%;}
+	.grid{ width:96%; margin-bottom:4%;}
+	.grid:nth-child(4){ float:left!important;}
+	
+	.grid-lg {width:96%; margin-bottom:4%;}
+	.grid-lg:nth-child(3){ float:left!important;}
+	
+	.section{ width:95%; height:auto; margin-top:1%;}
+	.section h1 { text-align:center;}
+	.section h4 { text-align:center; margin:5% 0!important;}
+	.col ul li{margin:0 0 1% 7%!important;}
+	
+	.col-2{ width:98%;}
+	.dark{width:88%;}
+	.offer{ width:95%;}
+	.offer > .button_2{font-size:16px;}
+	
+	.footer{ padding-bottom:4%!important;}
+	.footCol{ width:98%; float:left;}
+	.footCol > .textbox{ width:54%;}
+	.footCol > span > .button_2{ padding:5px 8px!important;}
+	.footCol:nth-child(2n){ float:left!important;}
+	.footCol > .col-2{ width:98%!important; float:left!important;}
+	
+}

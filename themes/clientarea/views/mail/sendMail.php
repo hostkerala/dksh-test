@@ -1,0 +1,1 @@
+    <h1>Test Mail - <?php  echo $params['name']; ?></h1>
