@@ -268,8 +268,7 @@ function load_client_additional_fields(event, ui, value, params){
 * @return boolean
 */
 Array.prototype.allValuesSame = function() {
-
-    for(var i = 1; i < this.length; i++)
+    for(var i = 0; i < this.length; i++)
     {
         if(parseInt(this[i]) !== 1)
         {
