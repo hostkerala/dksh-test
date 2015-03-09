@@ -271,8 +271,10 @@ Array.prototype.allValuesSame = function() {
 
     for(var i = 1; i < this.length; i++)
     {
-        if(this[i] !== 1)
-            return false;
+        if(parseInt(this[i]) !== 1)
+        {
+            return false;            
+        }
     }
     return true;
 }
