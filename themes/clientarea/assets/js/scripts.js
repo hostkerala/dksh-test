@@ -188,19 +188,28 @@ function show_modal_message( type, message ){
 function init_items_controls(){
 	$(document).on('click', '#items-controls input:button', function(){
 		
-		if( $('#item-content table input:checkbox:checked').size() == 0 )
+		if( $('#item-content table  input:checkbox:checked').size() == 0 )
 		{
 			//alert("No items selected.");
 			show_modal_message('Error', 'No items selected.');
 			return false;
-		}
+		}                
 		
 		var ids = [];
+                
 		for( var i =0; i < $('#item-content table input:checkbox:checked').size(); i++ ){
 			var checkbox = $('#item-content table input:checkbox:checked').get(i);
 			ids.push( $(checkbox).val() );
 		}
-		
+                
+                //Added to show warning if "selected select all" when no items in the list //Added by Roopan - Start
+                if(ids.allValuesSame())
+                {
+                    show_modal_message('Error', 'No items selected.');
+                    return false;                    
+                }
+                //Added by Roopan - End
+                
 		var $this = $(this);
 		ajax_load_block(
 			$this.data('target'),
@@ -209,6 +218,7 @@ function init_items_controls(){
 		);
 	})	
 }
+
 
 function app_magic_suggest_change(e, m, records){
 	var unique_id = $(m.container).attr('id');
@@ -247,6 +257,24 @@ function load_client_additional_fields(event, ui, value, params){
 		},
 	})
 	console.log([this, event, ui, params]);
+}
+
+/**
+* Created By Roopan v v <yiioverflow@gmail.com>
+* Date : 09-03-2015
+* Time :09:51 PM
+* Function to check ONLY the elemets with value "1" exists in the array
+* @param $model EmailHistory
+* @return boolean
+*/
+Array.prototype.allValuesSame = function() {
+
+    for(var i = 1; i < this.length; i++)
+    {
+        if(this[i] !== 1)
+            return false;
+    }
+    return true;
 }
 
 $(document).ajaxSuccess(function() {
