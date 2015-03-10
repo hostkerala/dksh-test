@@ -688,8 +688,13 @@ class ItemController extends ClientareaController {
         //This function is only for PDF testing purpose.        
         $selectedItems = array(40,85,90,96,102,89,80,121);         
         $html2pdf = Yii::app()->ePdf->HTML2PDF(); 
+        $html2pdf->ignore_invalid_utf8 = true;
+        //$stylesheet1 = file_get_contents('http://dksh.test/themes/clientarea/assets/css/bootstrap.min.css'); /// here call you external css file 
+        //$stylesheet2 = file_get_contents('http://dksh.test/themes/clientarea/assets/css/style.css');
+        //$html2pdf->WriteHTML($stylesheet1,1);
+        //$html2pdf->WriteHTML($stylesheet2,1);
         $mailContent = $this->renderPartial('_mail_pdf',array('selectedItems'=>$selectedItems),true); 
-        $html2pdf->WriteHTML($mailContent);       
+        $html2pdf->WriteHTML($mailContent);        
         $content_PDF = $html2pdf->Output('list.pdf', EYiiPdf::OUTPUT_TO_BROWSER);  
     }
 }
