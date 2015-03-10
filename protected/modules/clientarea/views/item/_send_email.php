@@ -1,4 +1,5 @@
 <div class="form-wrap form-horizontal">
+    <div class="alert alert-info" style="display:none" id="loading-indicator" >Sending Mail. Please wait...</div>
     <div class="row">
             <div class="form-group">
                 <?php echo $form->labelEx($model,'from', array('class' => 'control-label')); ?>
@@ -118,6 +119,23 @@
     </div>
 <style>
 
+#loading-indicator 
+{
+    display: none;
+    width:300px;
+    height: 50px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    text-align:center;
+    padding:10px;
+    font:normal 16px Tahoma, Geneva, sans-serif;
+    margin-left: -50px;
+    margin-top: -50px;
+    z-index:2;
+    overflow: auto;
+} 
+
 .checkboxArea
 {
      margin-top:20px;
@@ -159,6 +177,14 @@
     $('.btn-file :file').on('fileselect', function(event, numFiles, label) {
         $("#file-feedback").html(numFiles+" Files attached");
     });
-});
+    });
+
+    $(document).ajaxSend(function(event, request, settings) {
+      $('#loading-indicator').show();
+    });
+
+    $(document).ajaxComplete(function(event, request, settings) {
+      $('#loading-indicator').hide();
+    });
     
-</script>    
+</script>   
