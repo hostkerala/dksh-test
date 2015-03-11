@@ -442,7 +442,7 @@ class Item extends CActiveRecord
        public function findSumSelected($selected_items)
        { 
             $command=Yii::app()->db->createCommand();
-            $command->select('SUM(item_amount) AS sum_amount');
+            $command->select('SUM(item_total) AS sum_amount');
             $command->from('item');
             $command->where(array('in', 'id', $selected_items));
             $sum = $command->queryScalar();
