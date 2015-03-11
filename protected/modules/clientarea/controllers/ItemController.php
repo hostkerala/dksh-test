@@ -668,13 +668,18 @@ class ItemController extends ClientareaController {
     
     public function generatePdf($selectedItems)
     {
-        $html2pdf = Yii::app()->ePdf->HTML2PDF(); 
+        ob_start();
+        
+        $content = ob_get_clean(); 
+        $html2pdf = Yii::app()->ePdf->HTML2PDF();         
+        $stylesheet = file_get_contents(Yii::app()->request->getBaseUrl(true).'/themes/clientarea/assets/'.'css/pdf_styles.css'); /// here call you external css file         
         $mailContent = $this->renderPartial('_mail_pdf',array('selectedItems'=>$selectedItems),true); 
-        $html2pdf->WriteHTML($mailContent);       
-        $content_PDF = $html2pdf->Output('list.pdf', EYiiPdf::OUTPUT_TO_STRING);  
+        $content = $stylesheet.$mailContent;
+        $html2pdf->WriteHTML($content);
+        $content_PDF = $html2pdf->Output('list.pdf', EYiiPdf::OUTPUT_TO_STRING);
+        
         return $content_PDF;
-    }
-    
+    }    
     
     /**
     * Created By Roopan v v <yiioverflow@gmail.com>
@@ -686,15 +691,14 @@ class ItemController extends ClientareaController {
     public function actionPdf()
     {
         //This function is only for PDF testing purpose.        
-        $selectedItems = array(40,85,90,96,102,89,80,121);         
-        $html2pdf = Yii::app()->ePdf->HTML2PDF(); 
-        $html2pdf->ignore_invalid_utf8 = true;
-        //$stylesheet1 = file_get_contents('http://dksh.test/themes/clientarea/assets/css/bootstrap.min.css'); /// here call you external css file 
-        //$stylesheet2 = file_get_contents('http://dksh.test/themes/clientarea/assets/css/style.css');
-        //$html2pdf->WriteHTML($stylesheet1,1);
-        //$html2pdf->WriteHTML($stylesheet2,1);
+        $selectedItems = array(40,85,90,96,102,89,80,121);  
+        ob_start();
+        $content = ob_get_clean(); 
+        $html2pdf = Yii::app()->ePdf->HTML2PDF();         
+        $stylesheet = file_get_contents('http://dksh.test/themes/clientarea/assets/css/pdf_styles.css'); /// here call you external css file         
         $mailContent = $this->renderPartial('_mail_pdf',array('selectedItems'=>$selectedItems),true); 
-        $html2pdf->WriteHTML($mailContent);        
+        $content = $stylesheet.$mailContent;
+        $html2pdf->WriteHTML($content);
         $content_PDF = $html2pdf->Output('list.pdf', EYiiPdf::OUTPUT_TO_BROWSER);  
     }
 }
