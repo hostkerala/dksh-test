@@ -1,4 +1,4 @@
- <div class="alert alert-info" style="display:none" id="loading-indicator" >Sending Reminder. Please wait...</div>
+ <div class="alert alert-warning" style="display:none" id="loading-indicator" >Processing request... Please wait.</div>
 <?php
 /* @var $this ItemController */
 /* @var $dataProvider EmailHisstory */
@@ -48,25 +48,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
         ?>
     </div>
 </div>
-
-<style>
-#loading-indicator 
-{
-    display: none;
-    width:300px;
-    height: 50px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    text-align:center;
-    padding:10px;
-    font:normal 16px Tahoma, Geneva, sans-serif;
-    margin-left: -50px;
-    margin-top: -50px;
-    z-index:2;
-    overflow: auto;
-} 
-</style>
 
 <script>
     $(document).ajaxSend(function(event, request, settings) {
