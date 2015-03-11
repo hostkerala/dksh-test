@@ -446,10 +446,14 @@ class Item extends CActiveRecord
             $command->from('item');
             $command->where(array('in', 'id', $selected_items));
             $sum = $command->queryScalar();
+            
             if($sum)
             {
                 return $sum;
             }
-            return 0;
+            else
+            {
+                return 0;
+            }
        }
 }
