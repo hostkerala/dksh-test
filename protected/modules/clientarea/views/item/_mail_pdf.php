@@ -10,17 +10,17 @@
             <table class="item-details" style="margin-left:750px;outline: thin solid;">
                 <thead>
                     <tr>
-                        <th colspan="2"><?php echo CHtml::encode($item->category->category_title) . ' ' . Yii::app()->dateFormatter->format('MM/yyyy', time()); ?></th>
+                        <th class="border-left border-right border-top" colspan="2"><?php echo CHtml::encode($item->category->category_title) . ' ' . Yii::app()->dateFormatter->format('MM/yyyy', time()); ?></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="show-border">
-                        <td>Create time: <?php echo Yii::app()->dateFormatter->format('yyyy-MM-dd', $item->item_create_time); ?></td>
-                        <td>Submit time: <?php echo Yii::app()->dateFormatter->format('yyyy-MM-dd', $item->item_submit_time); ?></td>
+                        <td class="border-left">Create time: <?php echo Yii::app()->dateFormatter->format('yyyy-MM-dd', $item->item_create_time); ?></td>
+                        <td class="border-right">Submit time: <?php echo Yii::app()->dateFormatter->format('yyyy-MM-dd', $item->item_submit_time); ?></td>
                     </tr>
                     <tr class="show-border">
-                        <td>End time: <?php echo Yii::app()->dateFormatter->format('yyyy-MM-dd', $item->item_end_time); ?></td>
-                        <td>Type: <?php echo CHtml::encode($item->typeAlias); ?></td>
+                        <td class="border-left">End time: <?php echo Yii::app()->dateFormatter->format('yyyy-MM-dd', $item->item_end_time); ?></td>
+                        <td class="border-right">Type: <?php echo CHtml::encode($item->typeAlias); ?></td>
                     </tr>
                 </tbody>
             </table>
