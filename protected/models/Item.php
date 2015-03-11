@@ -449,11 +449,11 @@ class Item extends CActiveRecord
             
             if($sum)
             {
-                return $sum;
+                return  number_format((float)$sum, 2, '.', '');
             }
             else
             {
-                return 0;
+                return "0.00";
             }
        }
 }
